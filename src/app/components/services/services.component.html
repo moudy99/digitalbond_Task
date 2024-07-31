@@ -1,0 +1,18 @@
+<div class="container-fluid mb-5" #servicesContainer>
+     <div class="text-center mt-5">
+          <h1 #servicesTitle>Our Services</h1>
+     </div>
+     <div class="row">
+          <div class="col-md-4" *ngFor="let service of services; let i = index">
+               <div class="box" #serviceBox>
+                    <div class="our-services {{service.class}}">
+                         <div class="icon">
+                              <i class="service-icon {{service.icon}}"></i>
+                         </div>
+                         <h4>{{service.title}}</h4>
+                         <p>{{service.description}}</p>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>

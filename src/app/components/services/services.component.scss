@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins|Ubuntu&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #eee;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.container-fluid {
+  padding: 0 15px;
+}
+
+.box {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-bottom: 30px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.box.animate-service {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.our-services {
+  padding: 30px 40px;
+  min-height: 198px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 25px 0 rgba(20, 27, 202, 0.17);
+  position: relative;
+  overflow: visible;
+  cursor: pointer;
+}
+
+.our-services:hover {
+  transform: translateY(-10px);
+}
+
+.our-services .icon {
+  margin-bottom: -21px;
+  transform: translateY(-60%);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 13px;
+  border-bottom-left-radius: 18px;
+  font-size: 35px;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  animation: pulse 2s infinite;
+}
+
+.our-services h4,
+.our-services p {
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.our-services:hover h4 {
+  transform: translateY(-5px);
+}
+
+.our-services:hover p {
+  transform: translateY(5px);
+}
+
+.our-services::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.our-services:hover::before {
+  opacity: 1;
+}
+
+.our-services:hover h4,
+.our-services:hover p {
+  color: #fff;
+}
+
+.BRANDING .service-icon {
+  background-image: linear-gradient(-45deg, #34b5bf 0%, #210c59 100%);
+}
+.MOBILE_APPS .service-icon {
+  background-image: linear-gradient(-45deg, #fc6a0e 0%, #fdb642 100%);
+}
+.WEB_DEVELOPMENT .service-icon {
+  background-image: linear-gradient(-45deg, #3615e7 0%, #44a2f6 100%);
+}
+.SOCIAL_MEDIA .service-icon {
+  background-image: linear-gradient(-45deg, #fb0054 0%, #f55b2a 100%);
+}
+.PRODUCTION .service-icon {
+  background-image: linear-gradient(-45deg, #8d40fb 0%, #5a57fb 100%);
+}
+.SMS_CAMPAIGNS .service-icon {
+  background-image: linear-gradient(-45deg, #27b88d 0%, #22dd73 100%);
+}
+
+.BRANDING:hover::before {
+  background-image: linear-gradient(-45deg, #34b5bf 0%, #210c59 100%);
+}
+.MOBILE_APPS:hover::before {
+  background-image: linear-gradient(-45deg, #fc6a0e 0%, #fdb642 100%);
+}
+.WEB_DEVELOPMENT:hover::before {
+  background-image: linear-gradient(-45deg, #3615e7 0%, #44a2f6 100%);
+}
+.SOCIAL_MEDIA:hover::before {
+  background-image: linear-gradient(-45deg, #fb0054 0%, #f55b2a 100%);
+}
+.PRODUCTION:hover::before {
+  background-image: linear-gradient(-45deg, #8d40fb 0%, #5a57fb 100%);
+}
+.SMS_CAMPAIGNS:hover::before {
+  background-image: linear-gradient(-45deg, #27b88d 0%, #22dd73 100%);
+}
+
+.text-center h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 50px;
+  position: relative;
+  padding-bottom: 15px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.text-center h1.animate-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.text-center h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: linear-gradient(to right, #34b5bf, #210c59);
+  transition: width 1.5s ease-out;
+}
+
+.text-center h1.animate-title::after {
+  width: 100px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .our-services {
+    margin-top: 40px;
+  }
+
+  .text-center h1 {
+    font-size: 2.5rem;
+  }
+}

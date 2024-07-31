@@ -1,0 +1,149 @@
+<div class="contactUs-container" [class.is-visible]="isVisible">
+
+     <div class="text-center mt-5">
+          <h1 #sectionTitle class="title-section">Get in touch with us</h1>
+     </div>
+
+     <section class="contact-page-sec" #contactSection>
+          <div class="container">
+               <div class="row">
+                    <div class="col-md-4">
+                         <div class="contact-info">
+                              <div class="contact-info-item">
+                                   <div class="contact-info-icon">
+                                        <i class="fas fa-map-marked"></i>
+                                   </div>
+                                   <div class="contact-info-text">
+                                        <h2>Address</h2>
+                                        <span>
+                                             <a href="https://www.google.com/maps?q=11+Ahmed+Al+Shatouri,+Ad+Dokki,+Giza"
+                                                  target="_blank"
+                                                  class="contact-info-icon text-decoration-none text-color-custome">11
+                                                  Ahmed Al Shatouri, Ad
+                                                  Dokki, Giza</a>
+                                        </span>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="col-md-4">
+                         <div class="contact-info">
+                              <div class="contact-info-item">
+                                   <div class="contact-info-icon">
+                                        <i class="fas fa-envelope"></i>
+                                   </div>
+                                   <div class="contact-info-text">
+                                        <h2>E-mail</h2>
+                                        <span> <a href="mailto:Bonder@digitalbondmena.com"
+                                                  class="contact-info-icon text-decoration-none text-color-custome">Bonder&#64;digitalbondmena.com</a>
+                                        </span>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="col-md-4">
+                         <div class="contact-info">
+                              <div class="contact-info-item">
+                                   <div class="contact-info-icon">
+                                        <i class="fas fa-phone"></i>
+                                   </div>
+                                   <div class="contact-info-text">
+                                        <h2>Phone</h2>
+                                        <span><a href="tel:+201021551322"
+                                                  class="contact-info-icon text-decoration-none text-color-custome">+2 -
+                                                  01021551322</a></span>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+               <div class="row">
+                    <div class="col-md-8">
+                         <div class="contact-page-form" method="post">
+                              <h2>Get in Touch</h2>
+                              <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                                   <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                             <div class="single-input-field">
+                                                  <input type="text" placeholder="Your Name" formControlName="name" />
+                                                  <div
+                                                       *ngIf="contactForm.controls['name'].invalid && (contactForm.controls['name'].dirty || contactForm.controls['name'].touched)">
+                                                       <small
+                                                            *ngIf="contactForm.controls['name'].errors?.['required']">Name
+                                                            is required.</small>
+                                                       <small
+                                                            *ngIf="contactForm.controls['name'].errors?.['minlength']">Name
+                                                            must be at least 3 characters long.</small>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                             <div class="single-input-field">
+                                                  <input type="email" placeholder="E-mail" formControlName="email" />
+                                                  <div
+                                                       *ngIf="contactForm.controls['email'].invalid && (contactForm.controls['email'].dirty || contactForm.controls['email'].touched)">
+                                                       <small
+                                                            *ngIf="contactForm.controls['email'].errors?.['required']">Email
+                                                            is required.</small>
+                                                       <small
+                                                            *ngIf="contactForm.controls['email'].errors?.['email']">Invalid
+                                                            email address.</small>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                             <div class="single-input-field">
+                                                  <input type="text" placeholder="Phone Number"
+                                                       formControlName="phone" />
+                                                  <div
+                                                       *ngIf="contactForm.controls['phone'].invalid && (contactForm.controls['phone'].dirty || contactForm.controls['phone'].touched)">
+                                                       <small
+                                                            *ngIf="contactForm.controls['phone'].errors?.['required']">Phone
+                                                            number is required.</small>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                             <div class="single-input-field">
+                                                  <input type="text" placeholder="Subject" formControlName="subject" />
+                                                  <div
+                                                       *ngIf="contactForm.controls['subject'].invalid && (contactForm.controls['subject'].dirty || contactForm.controls['subject'].touched)">
+                                                       <small
+                                                            *ngIf="contactForm.controls['subject'].errors?.['required']">Subject
+                                                            is required.</small>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        <div class="col-md-12 message-input">
+                                             <div class="single-input-field">
+                                                  <textarea placeholder="Write Your Message"
+                                                       formControlName="message"></textarea>
+                                                  <div
+                                                       *ngIf="contactForm.controls['message'].invalid && (contactForm.controls['message'].dirty || contactForm.controls['message'].touched)">
+                                                       <small
+                                                            *ngIf="contactForm.controls['message'].errors?.['required']">Message
+                                                            is required.</small>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        <div class="single-input-fieldsbtn">
+                                             <input type="submit" value="Send Now" />
+                                        </div>
+                                   </div>
+                              </form>
+                         </div>
+                    </div>
+                    <div class="col-md-4">
+                         <div class="contact-page-map">
+                              <iframe
+                                   src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3454.139639243214!2d31.20918!3d30.0328515!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145841dbdca09375%3A0xc8f0a33432ed7642!2sDigital%20Bond!5e0!3m2!1sen!2seg!4v1722385527961!5m2!1sen!2seg"
+                                   width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                   referrerpolicy="no-referrer-when-downgrade" frameborder="0" style="border:0"
+                                   allowfullscreen></iframe>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </section>
+
+</div>
